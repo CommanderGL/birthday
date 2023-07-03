@@ -9,7 +9,7 @@ export default {
     },
     async mounted() {
         if (window.location.hash != '') {
-            this.name = window.location.hash.substring(1).replace("%20", " ");
+            this.name = window.location.hash.replace("%20", " ").substring(1);
 
             const { default: JSConfetti } = await import('js-confetti');
             const jsConfetti = new JSConfetti({
