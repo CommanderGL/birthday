@@ -52,7 +52,6 @@ export default {
     <div v-if="url != ''" class="generated">
         <RouterLink :to="url">{{ fullURL }}</RouterLink>
         <button @click="copy">Copy</button>
-        <br>
         <div class="qrcode-row">
             <vue-qrious :value="fullURL" level="M" :size="qrcodeSize" />
             <button @click="download">Download</button>
