@@ -12,8 +12,10 @@ export default {
         const params = new URLSearchParams(window.location.search);
         if (params.get('no-confetti') != null) this.confettiEnabled = false;
 
-        if (window.location.hash != '') {
-            this.name = window.location.hash.replace("%20", " ").substring(1);
+        const name = params.get('name');
+
+        if (name != '' && name != null) {
+            this.name = name.replace("%20", " ");
 
             const { default: JSConfetti } = await import('js-confetti');
             const jsConfetti = new JSConfetti({

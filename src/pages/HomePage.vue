@@ -17,7 +17,7 @@ export default {
 
             const { basePath } = await import('../router');
             
-            this.url = `${basePath}/view${(this.$refs.noConfetti as HTMLInputElement).checked ? '?no-confetti' : ''}#${(this.$refs.input as HTMLInputElement).value}`;
+            this.url = `${basePath}/view?${(this.$refs.noConfetti as HTMLInputElement).checked ? 'no-confetti&' : ''}name=${(this.$refs.input as HTMLInputElement).value}`;
             this.fullURL = `${window.location.origin}${this.url}`;
         },
         copy() {
