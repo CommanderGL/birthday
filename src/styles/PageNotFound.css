@@ -1,0 +1,12 @@
+/* Only Used On Dev Server (For Now) */
+
+#app:has(.notfound) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notfound {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ff4827;
+}
