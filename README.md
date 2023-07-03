@@ -6,3 +6,4 @@ A tool to generate special birthday websites!
 - URL Copying
 - QRCode Generation
 - QRCode Downloading
+- Togglable Confetti With `Space`

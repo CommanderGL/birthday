@@ -4,7 +4,8 @@ import '../styles/ViewPage.css';
 export default {
     data() {
         return {
-            name: ""
+            name: "",
+            confettiEnabled: true
         };
     },
     async mounted() {
@@ -16,8 +17,16 @@ export default {
                 canvas: this.$refs.canvas as HTMLCanvasElement
             });
             jsConfetti.addConfetti()
-            setInterval(() => jsConfetti.addConfetti(), 1250);
-        }   
+            setInterval(() => {
+                if (this.confettiEnabled) jsConfetti.addConfetti()
+            }, 1250);
+        }
+        
+        window.addEventListener('keypress', e => {
+            if (e.key == " ") {
+                this.confettiEnabled = !this.confettiEnabled;
+            }
+        });
     }
 };
 </script>
