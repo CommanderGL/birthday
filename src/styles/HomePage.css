@@ -38,8 +38,14 @@ a {
     align-items: center;
 }
 
-.qrcode-row > button {
-    margin-left: 1rem;
+.qrcode-row {
+    & > button {
+        margin-left: 1rem;
+    }
+
+    & > img {
+        cursor: pointer;
+    }
 }
 
 .preview {

@@ -53,7 +53,7 @@ export default {
         <RouterLink :to="url">{{ fullURL }}</RouterLink>
         <button @click="copy">Copy</button>
         <div class="qrcode-row">
-            <vue-qrious :value="fullURL" level="M" :size="qrcodeSize" />
+            <vue-qrious :value="fullURL" level="M" :size="qrcodeSize" @click="download" />
             <button @click="download">Download</button>
         </div>
         <div class="preview">
