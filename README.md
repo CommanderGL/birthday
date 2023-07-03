@@ -6,5 +6,5 @@ A tool to generate special birthday websites!
 - URL Copying
 - QRCode Generation
 - QRCode Downloading
-- Togglable Confetti With `Space`
-- No Confetti By Default (Change With `Space`)
+- Togglable Confetti with `Space` or `Touch`
+- No Confetti By Default (Toggle with `Space` or `Touch`)

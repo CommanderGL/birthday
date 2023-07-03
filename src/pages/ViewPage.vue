@@ -31,6 +31,9 @@ export default {
                 this.confettiEnabled = !this.confettiEnabled;
             }
         });
+        window.addEventListener('touchend', () => {
+            this.confettiEnabled = !this.confettiEnabled;
+        });
     }
 };
 </script>
