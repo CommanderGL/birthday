@@ -12,7 +12,7 @@ export default {
         }
     },
     methods: {
-        async onSubmit(e: Event) {
+        async onChangeOptions(e: Event) {
             e.preventDefault();
 
             const { basePath } = await import('../router');
@@ -42,11 +42,11 @@ export default {
 
 <template>
     <h1>Birthday Website Generator</h1>
-    <form @submit="onSubmit">
+    <form @submit="onChangeOptions">
         <input type="text" placeholder="Name..." ref="input" autofocus>
         <button type="submit">Generate!</button>
         <br>
-        <input type="checkbox" id="no-confetti" ref="noConfetti">
+        <input type="checkbox" id="no-confetti" ref="noConfetti" @change="onChangeOptions">
         <label for="no-confetti">No Confetti (By Default)</label>
     </form>
     <div v-if="url != ''" class="generated">
@@ -55,6 +55,10 @@ export default {
         <div class="qrcode-row">
             <vue-qrious :value="fullURL" level="M" :size="qrcodeSize" />
             <button @click="download">Download</button>
+        </div>
+        <div class="preview">
+            <h1>Preview:</h1>
+            <iframe :src="url" width="500" height="300"></iframe>
         </div>
     </div>
 </template>
