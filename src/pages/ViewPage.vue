@@ -9,6 +9,9 @@ export default {
         };
     },
     async mounted() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('no-confetti') != null) this.confettiEnabled = false;
+
         if (window.location.hash != '') {
             this.name = window.location.hash.replace("%20", " ").substring(1);
 
@@ -16,7 +19,8 @@ export default {
             const jsConfetti = new JSConfetti({
                 canvas: this.$refs.canvas as HTMLCanvasElement
             });
-            jsConfetti.addConfetti()
+            
+            if (this.confettiEnabled) jsConfetti.addConfetti()
             setInterval(() => {
                 if (this.confettiEnabled) jsConfetti.addConfetti()
             }, 1250);

@@ -7,3 +7,4 @@ A tool to generate special birthday websites!
 - QRCode Generation
 - QRCode Downloading
 - Togglable Confetti With `Space`
+- No Confetti By Default (Change With `Space`)

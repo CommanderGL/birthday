@@ -17,7 +17,7 @@ export default {
 
             const { basePath } = await import('../router');
             
-            this.url = `${basePath}/view#${(this.$refs.input as HTMLInputElement).value}`;
+            this.url = `${basePath}/view${(this.$refs.noConfetti as HTMLInputElement).checked ? '?no-confetti' : ''}#${(this.$refs.input as HTMLInputElement).value}`;
             this.fullURL = `${window.location.origin}${this.url}`;
         },
         copy() {
@@ -45,6 +45,9 @@ export default {
     <form @submit="onSubmit">
         <input type="text" placeholder="Name..." ref="input" autofocus>
         <button type="submit">Generate!</button>
+        <br>
+        <input type="checkbox" id="no-confetti" ref="noConfetti">
+        <label for="no-confetti">No Confetti (By Default)</label>
     </form>
     <div v-if="url != ''" class="generated">
         <RouterLink :to="url">{{ fullURL }}</RouterLink>
