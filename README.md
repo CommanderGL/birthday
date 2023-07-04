@@ -8,3 +8,5 @@ A tool to generate special birthday websites!
 - QRCode Downloading
 - Togglable Confetti with `Space` or `Touch`
 - No Confetti By Default (Toggle with `Space` or `Touch`)
+- Interactive Preview While Generating
+- Printing Generated QRCodes

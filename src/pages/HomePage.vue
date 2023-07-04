@@ -31,6 +31,12 @@ export default {
             document.body.appendChild(downloadElem);
             downloadElem.click();
             document.body.removeChild(downloadElem);
+        },
+        async print() {
+            const downloadURI = (document.querySelector('img') as HTMLImageElement).src;
+            const { default: printJS } = await import('print-js');
+
+            printJS(downloadURI, "image");
         }
     },
     components: {
@@ -55,6 +61,7 @@ export default {
         <div class="qrcode-row">
             <vue-qrious :value="fullURL" level="M" :size="qrcodeSize" @click="download" />
             <button @click="download">Download</button>
+            <button @click="print">Print</button>
         </div>
         <div class="preview">
             <h1>Preview:</h1>
