@@ -33,7 +33,7 @@ export default {
                 this.confettiEnabled = !this.confettiEnabled;
             }
         });
-        window.addEventListener('touchend', () => {
+        window.addEventListener('click', () => {
             this.confettiEnabled = !this.confettiEnabled;
         });
     }
