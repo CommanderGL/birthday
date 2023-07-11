@@ -6,10 +6,13 @@ import { reactive } from 'vue';
 export const basePath = '/birthday';
 const basePathRegex = /^(\/birthday)/;
 
-export const routes: {[key: string]: any} = {
+const routes: {[key: string]: any} = {
     '/view': ViewPageVue,
     '/': HomePageVue,
-    'notfound': PageNotFoundVue // Only Used On Dev Server (For Now)
+};
+
+const errors = {
+    404: PageNotFoundVue
 };
 
 export const store = reactive({
@@ -30,8 +33,7 @@ export const getCurrentPage = (newPath: string) => {
         return store.currentPage;
     }
 
-    if (routes['notfound'] != null) store.currentPage = routes['notfound'];
-    return store.currentPage;
+    if (errors[404] != null) store.currentPage = errors[404];
 };
 
 window.addEventListener('popstate', () => {
