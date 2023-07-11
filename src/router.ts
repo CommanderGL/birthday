@@ -34,4 +34,8 @@ export const getCurrentPage = (newPath: string) => {
     return store.currentPage;
 };
 
+window.addEventListener('popstate', () => {
+    getCurrentPage(window.location.pathname);
+});
+
 getCurrentPage(window.location.pathname);
