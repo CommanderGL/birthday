@@ -4,7 +4,7 @@ import PageNotFoundVue from './pages/PageNotFound.vue';
 import { reactive } from 'vue';
 
 export const basePath = '/birthday';
-const basePathRegex = /^(\/birthday)/;
+const basePathRegex = new RegExp(`^(${basePath.replace('/', '\\/')})`);
 
 const routes: {[key: string]: any} = {
     '/view': ViewPageVue,
