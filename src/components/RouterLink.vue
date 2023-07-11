@@ -9,7 +9,9 @@ export default {
         onClick(e: Event) {
             e.preventDefault();
             window.history.pushState(this.to, this.to as string, this.to);
-            getCurrentPage(this.to as string);
+            const parser = document.createElement('a');
+            parser.href = this.to as string;
+            getCurrentPage(parser.pathname);
         }
     }
 };
